@@ -1,0 +1,25 @@
+<h1>Product Management</h1>
+            <br/><br/><br/>
+            <table>
+                <button (click)="toggleImage()" class='btn btn-primary'>Show Image</button>
+            <tr>
+            <td>ProductId</td>
+            <td>Product Image</td>
+            <td>ProductName</td>
+            <td>ProductCode</td>
+            <td>ReleaseDate</td>
+            <td>Price</td>  
+            <td>starRating</td>
+            </tr>
+            <tr *ngFor ="let pro of Product">
+            <td>{{pro.productId}}</td>
+                <td>
+                    <img *ngIf="showImage" [src]='pro.imageUrl' [style.width.px]="60" [style.height.px]="60">
+                </td>
+            <td>{{pro.productName}}</td>
+            <td>{{pro.productCode}}</td>
+            <td>{{pro.releaseDate}}</td>
+            <td>{{pro.price}}</td>
+            <td>{{pro.starRating}}</td>
+            </tr>
+            </table>
